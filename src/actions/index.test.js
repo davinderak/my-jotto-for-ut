@@ -1,7 +1,7 @@
 import moxios from 'moxios';
 
 import { storeFactory } from '../../test/testUtils';
-import { getSecretWord } from './';
+import { getSecretWord, resetGame } from './';
 
 describe('getSecretWord action creator', () => {
     beforeEach(() => {
@@ -15,7 +15,7 @@ describe('getSecretWord action creator', () => {
         const secretWord = 'Party';
         const store = storeFactory();
         moxios.wait(() => {
-            let request = moxios.requests.mostRecent('http://localhost:3000/');
+            let request = moxios.requests.mostRecent('http://localhost:3030/');
             request.respondWith({
                 status: 200,
                 response: secretWord
