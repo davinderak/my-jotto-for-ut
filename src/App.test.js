@@ -44,7 +44,8 @@ test('`getSecretWord` runs on App mount', () => {
   const props = {
     getSecretWord: getSecretWordMock,
     success: false,
-    guessedWords: []
+    guessedWords: [],
+    gaveUp: false
   }
   const wrapper = shallow(<UnconnectedApp {...props} />);
   wrapper.instance().componentDidMount();
